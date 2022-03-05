@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
-set_global_assignment -name TOP_LEVEL_ENTITY Test1
+set_global_assignment -name TOP_LEVEL_ENTITY Envelope
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:11:29  MARCH 05, 2022"
 set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
@@ -48,13 +48,26 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 set_global_assignment -name BDF_FILE Test1.bdf
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name BDF_FILE Envelope.bdf
+set_global_assignment -name BDF_FILE "4-bit Register.bdf"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_location_assignment PIN_E1 -to A
-set_location_assignment PIN_A15 -to S
-set_global_assignment -name BDF_FILE Envelope.bdf
-set_global_assignment -name BDF_FILE "4-bit Register.bdf"
+set_location_assignment PIN_E1 -to CLK
+set_location_assignment PIN_J15 -to EvStore
+set_location_assignment PIN_A15 -to Env_Out[3]
+set_location_assignment PIN_A13 -to Env_Out[2]
+set_location_assignment PIN_B13 -to Env_Out[1]
+set_location_assignment PIN_A11 -to Env_Out[0]
+set_location_assignment PIN_A2 -to Ev1t
+set_location_assignment PIN_A3 -to Ev2t
+set_location_assignment PIN_B3 -to Ev3t
+set_location_assignment PIN_B4 -to Ev4t
+set_location_assignment PIN_A4 -to LoopFlag
+set_location_assignment PIN_B5 -to SetStartFlag
+set_location_assignment PIN_D5 -to ConstantVolumeFlag
+set_location_assignment PIN_A5 -to tstIn
+set_location_assignment PIN_D1 -to tstOut
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

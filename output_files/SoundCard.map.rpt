@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SoundCard
-Sat Mar 05 14:38:43 2022
+Sat Mar 05 17:22:22 2022
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,10 +13,13 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: BUSMUX:insts
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -42,16 +45,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Mar 05 14:38:43 2022       ;
+; Analysis & Synthesis Status        ; Successful - Sat Mar 05 17:22:22 2022       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; SoundCard                                   ;
-; Top-level Entity Name              ; Test1                                       ;
+; Top-level Entity Name              ; Envelope                                    ;
 ; Family                             ; Cyclone IV E                                ;
 ; Total logic elements               ; 0                                           ;
 ;     Total combinational functions  ; 0                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 2                                           ;
+; Total pins                         ; 15                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -65,7 +68,7 @@ refer to the applicable agreement for further details.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE22F17C6       ;                    ;
-; Top-level entity name                                            ; Test1              ; SoundCard          ;
+; Top-level entity name                                            ; Envelope           ; SoundCard          ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -161,44 +164,53 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                    ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                          ; Library ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------+---------+
-; Test1.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/ijifl/OneDrive/Desktop/BRICKHACKS/8-bit-Sound-Card/Test1.bdf ;         ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------+---------+
+; Envelope.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/ijifl/OneDrive/Desktop/BRICKHACKS/8-bit-Sound-Card/Envelope.bdf   ;         ;
+; busmux.tdf                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/busmux.tdf          ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc         ;         ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.tdf         ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc      ;         ;
+; muxlut.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/muxlut.inc          ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/bypassff.inc        ;         ;
+; altshift.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altshift.inc        ;         ;
+; db/mux_arc.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/ijifl/OneDrive/Desktop/BRICKHACKS/8-bit-Sound-Card/db/mux_arc.tdf ;         ;
+; 4count.bdf                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/others/maxplus2/4count.bdf        ;         ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-;                                             ;          ;
-; Total combinational functions               ; 0        ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 0        ;
-;     -- 3 input functions                    ; 0        ;
-;     -- <=2 input functions                  ; 0        ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 0        ;
-;     -- arithmetic mode                      ; 0        ;
-;                                             ;          ;
-; Total registers                             ; 0        ;
-;     -- Dedicated logic registers            ; 0        ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 2        ;
-;                                             ;          ;
-; Embedded Multiplier 9-bit elements          ; 0        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; S~output ;
-; Maximum fan-out                             ; 1        ;
-; Total fan-out                               ; 3        ;
-; Average fan-out                             ; 0.75     ;
-+---------------------------------------------+----------+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+;                                             ;               ;
+; Total combinational functions               ; 0             ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 0             ;
+;     -- 3 input functions                    ; 0             ;
+;     -- <=2 input functions                  ; 0             ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 0             ;
+;     -- arithmetic mode                      ; 0             ;
+;                                             ;               ;
+; Total registers                             ; 0             ;
+;     -- Dedicated logic registers            ; 0             ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 15            ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; tstOut~output ;
+; Maximum fan-out                             ; 1             ;
+; Total fan-out                               ; 16            ;
+; Average fan-out                             ; 0.53          ;
++---------------------------------------------+---------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -206,9 +218,45 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |Test1                     ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 2    ; 0            ; |Test1              ; Test1       ; work         ;
+; |Envelope                  ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |Envelope           ; Envelope    ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                            ;
++----------------------------------------+--------------------------------------+
+; Register name                          ; Reason for Removal                   ;
++----------------------------------------+--------------------------------------+
+; inst18                                 ; Stuck at GND due to stuck port clear ;
+; inst8                                  ; Stuck at GND due to stuck port clear ;
+; inst6                                  ; Stuck at GND due to stuck port clear ;
+; inst2                                  ; Stuck at GND due to stuck port clear ;
+; inst15                                 ; Stuck at GND due to stuck port clear ;
+; inst4                                  ; Stuck at GND due to stuck port clear ;
+; inst1                                  ; Stuck at GND due to stuck port clear ;
+; 4count:DecayC|46                       ; Stuck at GND due to stuck port clock ;
+; 4count:DecayC|45                       ; Stuck at GND due to stuck port clock ;
+; 4count:DecayC|44                       ; Stuck at GND due to stuck port clock ;
+; inst7                                  ; Lost fanout                          ;
+; 4count:Divider|46                      ; Lost fanout                          ;
+; 4count:Divider|45                      ; Lost fanout                          ;
+; 4count:Divider|44                      ; Lost fanout                          ;
+; 4count:Divider|43                      ; Lost fanout                          ;
+; Total Number of Removed Registers = 15 ;                                      ;
++----------------------------------------+--------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                          ;
++---------------+-------------------------+----------------------------------------------------------------------------+
+; Register name ; Reason for Removal      ; Registers Removed due to This Register                                     ;
++---------------+-------------------------+----------------------------------------------------------------------------+
+; inst8         ; Stuck at GND            ; 4count:DecayC|46, 4count:DecayC|45, 4count:DecayC|44, inst7                ;
+;               ; due to stuck port clear ;                                                                            ;
+; inst6         ; Stuck at GND            ; 4count:Divider|46, 4count:Divider|45, 4count:Divider|44, 4count:Divider|43 ;
+;               ; due to stuck port clear ;                                                                            ;
++---------------+-------------------------+----------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -226,18 +274,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:insts ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; WIDTH          ; 4     ; Untyped                          ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 2                           ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
+; boundary_port         ; 15                          ;
+; cycloneiii_lcell_comb ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 1.00                        ;
+; Average LUT depth     ; 0.67                        ;
 +-----------------------+-----------------------------+
 
 
@@ -256,22 +315,55 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Mar 05 14:38:26 2022
+    Info: Processing started: Sat Mar 05 17:22:06 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SoundCard -c SoundCard
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file test1.bdf
     Info (12023): Found entity 1: Test1
-Info (12127): Elaborating entity "Test1" for the top level hierarchy
+Info (12021): Found 1 design units, including 1 entities, in source file envelope.bdf
+    Info (12023): Found entity 1: Envelope
+Info (12021): Found 1 design units, including 1 entities, in source file 4-bit register.bdf
+    Info (12023): Found entity 1: 4-bit Register
+Info (12127): Elaborating entity "Envelope" for the top level hierarchy
+Warning (275011): Block or symbol "NOT" of instance "inst5" overlaps another block or symbol
+Warning (275002): No superset bus at connection
+Info (12128): Elaborating entity "BUSMUX" for hierarchy "BUSMUX:insts"
+Info (12130): Elaborated megafunction instantiation "BUSMUX:insts"
+Info (12133): Instantiated megafunction "BUSMUX:insts" with the following parameter:
+    Info (12134): Parameter "WIDTH" = "4"
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "BUSMUX:insts|lpm_mux:$00000" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
+Info (12131): Elaborated megafunction instantiation "BUSMUX:insts|lpm_mux:$00000", which is child of megafunction instantiation "BUSMUX:insts" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_arc.tdf
+    Info (12023): Found entity 1: mux_arc File: C:/Users/ijifl/OneDrive/Desktop/BRICKHACKS/8-bit-Sound-Card/db/mux_arc.tdf Line: 22
+Info (12128): Elaborating entity "mux_arc" for hierarchy "BUSMUX:insts|lpm_mux:$00000|mux_arc:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
+Info (12128): Elaborating entity "4count" for hierarchy "4count:DecayC"
+Info (12130): Elaborated megafunction instantiation "4count:DecayC"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Env_Out[3]" is stuck at GND
+    Warning (13410): Pin "Env_Out[2]" is stuck at GND
+    Warning (13410): Pin "Env_Out[1]" is stuck at GND
+    Warning (13410): Pin "Env_Out[0]" is stuck at GND
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 1 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4730 megabytes
-    Info: Processing ended: Sat Mar 05 14:38:43 2022
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:35
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLK"
+    Warning (15610): No output dependent on input pin "ConstantVolumeFlag"
+    Warning (15610): No output dependent on input pin "SetStartFlag"
+    Warning (15610): No output dependent on input pin "LoopFlag"
+    Warning (15610): No output dependent on input pin "EvStore"
+    Warning (15610): No output dependent on input pin "Ev2t"
+    Warning (15610): No output dependent on input pin "Ev1t"
+    Warning (15610): No output dependent on input pin "Ev4t"
+    Warning (15610): No output dependent on input pin "Ev3t"
+Info (21057): Implemented 15 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 5 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 4734 megabytes
+    Info: Processing ended: Sat Mar 05 17:22:22 2022
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:32
 
 
