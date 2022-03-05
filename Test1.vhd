@@ -14,7 +14,7 @@
 
 -- PROGRAM		"Quartus Prime"
 -- VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
--- CREATED		"Sat Mar 05 14:14:14 2022"
+-- CREATED		"Sat Mar 05 14:37:25 2022"
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all; 
@@ -34,7 +34,10 @@ ARCHITECTURE bdf_type OF Test1 IS
 
 
 BEGIN 
-S <= A;
+
+
+
+S <= NOT(A);
 
 
 
