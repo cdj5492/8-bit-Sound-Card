@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sat Mar 05 14:38:43 2022
+Analysis & Synthesis Status : Successful - Sat Mar 05 16:08:23 2022
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : SoundCard
-Top-level Entity Name : Test1
+Top-level Entity Name : Test2
 Family : Cyclone IV E
-Total logic elements : 0
-    Total combinational functions : 0
-    Dedicated logic registers : 0
-Total registers : 0
-Total pins : 2
+Total logic elements : 4
+    Total combinational functions : 4
+    Dedicated logic registers : 4
+Total registers : 4
+Total pins : 5
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
